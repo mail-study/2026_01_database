@@ -11,3 +11,4 @@ right join Customer c using(custid); -- outer는 생략 가능
 
 -- mysql은 full outer join을 직접적으로 제공하지 않는다
 
+

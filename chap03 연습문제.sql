@@ -55,3 +55,4 @@ select  e.first_name, d.department_name
 from departments d left outer join employees e using(manager_id)
 where d.location_id = 1700
 order by d.department_name desc;
+
