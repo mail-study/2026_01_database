@@ -56,3 +56,24 @@ from departments d left outer join employees e using(manager_id)
 where d.location_id = 1700
 order by d.department_name desc;
 
+-- 부속질의
+
+-- 1번
+select first_name from employees e
+where salary = (select max(salary) from employees);
+
+-- 2번
+select department_name from departments d
+where department_id in (
+    select department_id from employees
+    group by department_id
+    having count(*) >= 5
+    );
+
+-- 3번
+select first_name from employees e
+where job_id in (
+    select job_id from jobs where job_title like '%Purchasing%'
+    );
+
+-- 4번
